@@ -91,3 +91,5 @@ So you will often see architectures like:
   (two convs before each pooling step)
 
 
+### References 
+Stanford notes: [link](https://cs231n.github.io/convolutional-networks/)

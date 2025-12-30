@@ -1,0 +1,156 @@
+{
+  // Python Language Server
+  "python.languageServer": "Pylance",
+  
+  // Type Checking (helps catch errors before runtime)
+  "python.analysis.typeCheckingMode": "off",
+  
+  // Auto-imports
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.completeFunctionParens": true,
+  
+  // Inlay Hints (shows parameter names inline)
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.variableTypes": false,
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  
+  // Linting with Ruff (faster than Pylint)
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  
+  // Ruff configuration
+  "ruff.enable": true,
+  "ruff.organizeImports": true,
+  "ruff.fixAll": true,
+  
+  // IntelliSense
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  
+  // Error Lens (inline errors)
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "errorLens.messageTemplate": "$message",
+  
+  // Jupyter Notebooks
+  "jupyter.askForKernelRestart": false,
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "notebook.output.textLineLimit": 50,
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  
+  // Interactive window for .py files (shift+enter to run code)
+  "jupyter.enableNativeInteractiveWindow": true,
+  
+  // Testing
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  
+  // Terminal
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.executeInFileDir": true,
+  
+  // File associations
+  "files.associations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.csv": "csv"
+  },
+  
+  // Editor improvements for data work
+  "editor.rulers": [88],
+  "editor.wordWrap": "off",
+  "editor.minimap.enabled": false,
+  "editor.minimap.maxColumn": 120,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  
+
+  // File exclusions (keep workspace clean)
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.ipynb_checkpoints": true,
+    "**/.ruff_cache": true
+  },
+  
+  // Search exclusions
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.venv": true,
+    "**/venv": true,
+    "**/.ipynb_checkpoints": true
+  },
+  "breadcrumbs.enabled": false,
+  "editor.stickyScroll.enabled": false,
+
+
+  // Font settings
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "material-icon-theme",
+
+    "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "entity.name.function",
+        "settings": { "fontStyle": "" }
+      }
+    ]
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "python": false
+  },
+  "workbench.startupEditor": "none",
+  "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/studie/bin/python",
+  "git.openRepositoryInParentFolders": "never",
+
+  // Suppress ambiguous variable name warning
+"python.analysis.diagnosticSeverityOverrides": {
+      "reportAmbiguousVariableName": "none",
+      "reportAny": "none",
+      "reportUndefinedVariable": "none"
+
+  },
+
+  "editor.lineNumbers": "on",
+  "notebook.lineNumbers": "on",
+  "notebook.cellFocusIndicator": "gutter",
+
+    // --- Pylance: richer types/completions for 3rd party libs ---
+  "python.analysis.useLibraryCodeForTypes": true,
+
+  // --- Pylance: index installed packages so auto-import + suggestions work better ---
+  "python.analysis.indexing": true,
+
+  // Index deeper inside these packages (depth=1 is often too shallow)
+  "python.analysis.packageIndexDepths": [
+    { "name": "torch", "depth": 4 },
+    { "name": "torchvision", "depth": 4 },
+    { "name": "numpy", "depth": 3 }
+  ],
+
+  // --- Jupyter: better completions inside notebooks ---
+  "jupyter.enableExtendedPythonKernelCompletions": true,
+
+}
