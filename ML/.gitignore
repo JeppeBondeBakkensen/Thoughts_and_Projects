@@ -1,0 +1,9 @@
+// ...existing code...
+data/
+Books/
+*.tar.gz
+*.tgz
+*.zip
+*.pdf
+.DS_Store
+# End
